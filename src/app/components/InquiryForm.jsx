@@ -179,8 +179,8 @@ function PaymentScreen({ tier, onExpired }) {
   );
 }
 
-export default function InquiryForm({ interestPlace }) {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+export default function InquiryForm({ interestPlace = '', editableInterestPlace = false, interestPlaceholder = 'e.g. Jaipur, Udaipur, Kerala' }) {
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', interest_place: interestPlace || '' });
   const [selectedTier, setSelectedTier] = useState(null);
   const [status, setStatus] = useState('idle');
   const [errMsg, setErrMsg] = useState('');
@@ -199,7 +199,7 @@ export default function InquiryForm({ interestPlace }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
-          interest_place: interestPlace,
+          interest_place: editableInterestPlace ? form.interest_place : interestPlace,
           tier: selectedTier?.id || null,
           tier_amount: selectedTier?.amount || null,
           payment_status: selectedTier ? 'pending' : 'none',
@@ -263,7 +263,11 @@ export default function InquiryForm({ interestPlace }) {
         ) : (
           <>
             <p className="inq-title">Plan Your Journey</p>
-            <p className="inq-sub">Enquire about <strong style={{ color: '#F2C4A0' }}>{interestPlace}</strong> - our team responds within 24 hours.</p>
+            <p className="inq-sub">
+              {editableInterestPlace
+                ? <>Tell us your city or destination and our team responds within 24 hours.</>
+                : <>Enquire about <strong style={{ color: '#F2C4A0' }}>{interestPlace}</strong> - our team responds within 24 hours.</>}
+            </p>
             <form onSubmit={submit}>
               {status === 'error' && <p className="inq-err">⚠ {errMsg}</p>}
               <div className="inq-row">
@@ -279,7 +283,14 @@ export default function InquiryForm({ interestPlace }) {
               <label className="inq-label">EMAIL ADDRESS</label>
               <input className="inq-field" type="email" placeholder="arjun@email.com" value={form.email} onChange={set('email')} required />
               <label className="inq-label">DESTINATION</label>
-              <input className="inq-field" value={interestPlace} readOnly />
+              <input
+                className="inq-field"
+                value={editableInterestPlace ? form.interest_place : interestPlace}
+                onChange={editableInterestPlace ? set('interest_place') : undefined}
+                placeholder={editableInterestPlace ? interestPlaceholder : undefined}
+                readOnly={!editableInterestPlace}
+                required
+              />
 
               <div className="tier-section">
                 <span className="tier-section-label">

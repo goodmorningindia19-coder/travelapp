@@ -473,7 +473,7 @@ export default function IndiaPage() {
             </h2>
             <div className="rg-divider" />
           </div>
-          <InquiryForm interestPlace="A Custom India Journey" />
+          <InquiryForm editableInterestPlace interestPlaceholder="e.g. Jaipur, Jodhpur, Udaipur" />
         </div>
       </section>
 
