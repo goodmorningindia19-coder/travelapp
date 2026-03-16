@@ -348,7 +348,7 @@ const STYLE = `
   @media (max-width: 520px) {
     .gmih-brand-sub  { display: none; }
     .gmih-brand-name { font-size: 0.58rem; letter-spacing: 0.1em; }
-    .gmih-logo-box   { width: 0px; height: 0px; }
+    .gmih-logo-box   { width: 54px; height: 40px; }
   }
 `;
 

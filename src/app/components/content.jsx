@@ -221,7 +221,7 @@ const STYLE = `
     .newsletter-form { flex-direction: column; max-width: 100%; gap: 12px; }
     .footer-bottom { justify-content: center; text-align: center; }
     .footer-brand-lockup { flex-direction: column; align-items: flex-start; }
-    .footer-logo-box { width: 0px; }
+    .footer-logo-box { width: 96px; }
     .feature-grid > .img-box {
       min-height: 320px !important;
     }

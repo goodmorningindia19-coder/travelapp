@@ -176,11 +176,11 @@ export default function CarRentalForm({ embedded = false }) {
             <div>
               <label className="car-label">CAR TYPE</label>
               <select className="car-field" value={form.car_type} onChange={set('car_type')} required>
-                <option value="">Select vehicle</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="tempo-traveller">Tempo Traveller</option>
-                <option value="luxury">Luxury Car</option>
+                <option value="" className='text-black' >Select vehicle</option>
+                <option value="sedan" className='text-black' >Sedan</option>
+                <option value="suv" className='text-black' >SUV</option>
+                <option value="tempo-traveller" className='text-black' >Tempo Traveller</option>
+                <option value="luxury" className='text-black' >Luxury Car</option>
               </select>
             </div>
           </div>
