@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://goodmorningindiaholidays.in"),
+  metadataBase: new URL("https://www.goodmorningindiaholidays.com/"),
   title: {
     default: "Good Morning India Holidays",
     template: "%s | Good Morning India Holidays",
@@ -38,7 +38,7 @@ export const metadata = {
     title: "Good Morning India Holidays",
     description:
       "Tailored journeys across India with curated stays, local insight, and beautifully planned destination experiences.",
-    url: "https://goodmorningindiaholidays.in",
+    url: "https://www.goodmorningindiaholidays.com/",
     siteName: "Good Morning India Holidays",
     locale: "en_IN",
     type: "website",
