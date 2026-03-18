@@ -44,7 +44,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.jpeg",
+        url: "https://www.goodmorningindiaholidays.com/images/logo.jpeg", // 👈 absolute
         width: 916,
         height: 687,
         alt: "Good Morning India Holidays logo",
@@ -56,7 +56,7 @@ export const metadata = {
     title: "Good Morning India Holidays",
     description:
       "Curated India journeys across heritage cities, mountains, coasts, wildlife, and cultural routes.",
-    images: ["/images/logo.jpeg"],
+    images: ["https://www.goodmorningindiaholidays.com/images/logo.jpeg"], // 👈 absolute
   },
   icons: {
     icon: "/images/logo.jpeg",
